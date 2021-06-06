@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { updateParentApp } from '@/helpers/updateParentRoute'
+import { updateParentApp } from '@/helpers/updateParentApp'
 
 export default {
   name: 'NavBar',
