@@ -1,13 +1,30 @@
 <template>
   <div id="nav">
-    <router-link @click="updateParentRoute('/')" to="/">Home</router-link> |
-    <router-link @click="updateParentRoute('/about')" to="/about">About</router-link>
+    <router-link @click="navigateToRoute('/')" to="/">Home</router-link> |
+    <router-link @click="navigateToRoute('/about')" to="/about">About</router-link>
   </div>
 </template>
 
 <script>
+import { updateParentApp } from '@/helpers/updateParentRoute'
+
 export default {
   name: 'NavBar',
+  methods: {
+    navigateToRoute(url) {
+      // simple check for url change
+      if (url !== this.route) {
+        // create the message to inform stitcher app
+        const msg = {
+          action: 'update route',
+          route: url
+        }
+        
+        // call global helper method to update stitcher app about the route change
+        updateParentApp(msg)
+      }
+    }
+  }
 }
 </script>
 

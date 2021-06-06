@@ -2,14 +2,17 @@
   <div class="container">
     <div class="row justify-content-center align-item-center text-center">
       <div class="col-12 col-md-10 col-lg-8">
+        <!-- Navigation Bar -->
         <NavBar/>
 
+        <!-- App Information Component -->
         <AppInfo/>
 
-
+        <!-- Route renderer -->
         <router-view/>
 
-        
+
+        <!-- Current Route info -->
         <h3>
           Current child route is: <span class="pink-text">{{route}}</span>
         </h3>
@@ -29,29 +32,9 @@ export default {
     NavBar,
     AppInfo
   },
-  data() {
-    return {
-      stitcherAppDomain: process.env.VUE_APP_STITCHER_DOMAIN
-    }
-  },
   computed: {
     route() {
-      return this.$route.fullPath
-    }
-  },
-  methods: {
-    updateParentRoute(url) {
-      if (url !== this.route) {
-        const msg = {
-          action: 'update route',
-          route: url
-        }
-        try {
-          window.parent.postMessage(msg, this.stitcherAppDomain);
-        } catch(e) {
-          console.error('error posting message to stitcher app', e);
-        }
-      }
+      return this.$route.fullPath // return the fullpath of the current child app route
     }
   },
 }
