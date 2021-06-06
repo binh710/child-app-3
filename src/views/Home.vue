@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
-    <h1>Welcome to Your Child app</h1>
-  </div>
+  <h1 class="pink-text">Home page</h1>
+  <br/>
 </template>
 
 <script>
@@ -9,3 +8,9 @@ export default {
   name: 'Home',
 }
 </script>
+<style scoped>
+h1 {
+  font-weight: bold;
+  color: #FF4083;
+}
+</style>
