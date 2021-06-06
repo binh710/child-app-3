@@ -1,6 +1,7 @@
 <template>
   <h1 class="pink-text">Home page</h1>
   <br/>
+  <br/>
 </template>
 
 <script>
