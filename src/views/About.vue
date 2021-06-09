@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { updateParentApp } from '@/helpers/updateParentApp'
+import { updateStitcherApp } from '@/helpers/updateStitcherApp'
 
 export default {
   name: 'About',
@@ -25,7 +25,7 @@ export default {
       
       // call global helper method to update stitcher app about the route change
       this.$router.push('/')
-      updateParentApp(msg)
+      updateStitcherApp(msg)
     }
   }
 }
