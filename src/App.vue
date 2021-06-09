@@ -38,23 +38,23 @@ export default {
     }
   },
   methods: {
-    listenForStitcherMessage(event) {
-      if (this.sticherAppDomain && this.sticherAppDomain === event.origin) {
-        // check if the message format is valid
-        if ( event.data && event.data.action) {
-          if (event.data.action === 'initial additional route' && event.data.additionalRouteParams) {
-            this.$router.push(event.data.additionalRouteParams)
-          }
-        }
-      }
-    },
+    // listenForStitcherMessage(event) {
+    //   if (this.sticherAppDomain && this.sticherAppDomain === event.origin) {
+    //     // check if the message format is valid
+    //     if ( event.data && event.data.action) {
+    //       if (event.data.action === 'initial additional route' && event.data.additionalRouteParams) {
+    //         this.$router.push(event.data.additionalRouteParams)
+    //       }
+    //     }
+    //   }
+    // },
   },
-  mounted() {
-    window.addEventListener('message', this.listenForStitcherMessage)
-  },
-  beforeUnmount () {
-    window.removeEventListener('message', this.listenForStitcherMessage)
-  }
+  // mounted() {
+  //   window.addEventListener('message', this.listenForStitcherMessage)
+  // },
+  // beforeUnmount () {
+  //   window.removeEventListener('message', this.listenForStitcherMessage)
+  // }
 }
 </script>
 

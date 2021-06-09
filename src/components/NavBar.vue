@@ -10,6 +10,11 @@ import { updateParentApp } from '@/helpers/updateParentApp'
 
 export default {
   name: 'NavBar',
+  computed: {
+    route() {
+      return this.$route.fullPath // return the fullpath of the current child app route
+    }
+  },
   methods: {
     navigateToRoute(url) {
       // simple check for url change
